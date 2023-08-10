@@ -9,8 +9,24 @@ class Lesson extends Model
 {
     use HasFactory;
 
+    //Relacion uno a uno 
+
+    public function description(){
+        return $this->hasOne('App\Models\Description');
+    }
+
+    //Relacion uno a muchos inversa
     public function section(){
         return $this->belongsTo('App\Models\Section');
+    }
+
+    public function platform(){
+        return $this->belongsTo('App\Models\Platform');
+    }
+
+    //Relacion muchos a muchos
+    public function users(){
+        return $this->belongsToMany('App\Models\User');
     }
 
 }
