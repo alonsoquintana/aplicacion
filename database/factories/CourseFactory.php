@@ -34,9 +34,9 @@ class CourseSeederFactory extends Factory
             'status' => $this->faker->randomElement([Course::BORRADOR, Course::REVISION, Course::PUBLICADO]),
             'slug' => Str::slug($title),
             'user_id' => User::all()->random()->id,
-            'level' => Level::all()->random()->id,
+            'level_id' => Level::all()->random()->id,
             'caregory_id' => Category::all()->random()->id,
-            'price_id' => Price::all()->random()->id,
+            'price_id' => Price::all()->random()->id
         ];
     }
 }
