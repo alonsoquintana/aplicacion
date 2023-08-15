@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class CourseSeederFactory extends Factory
+class CourseFactory extends Factory
 {
     /**
      * Define the model's default state.
