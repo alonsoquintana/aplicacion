@@ -2,24 +2,29 @@
 
 namespace Database\Factories;
 
+use App\Models\Lesson;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lesson>
- */
 class LessonFactory extends Factory
 {
     /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Lesson::class;
+
+    /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array
      */
-    public function definition(): array
+    public function definition()
     {
         return [
             'name' => $this->faker->sentence(),
-            'url' => 'https://youtu.be/kagoEGKHZvU',
-            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/kagoEGKHZvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+            'url' => 'https://youtu.be/kagoEGKHZvU?si=mrJvu2dq4jn31RTx',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/kagoEGKHZvU?si=mrJvu2dq4jn31RTx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
             'platform_id' => 1
         ];
     }

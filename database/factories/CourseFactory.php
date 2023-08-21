@@ -12,18 +12,24 @@ use App\Models\Price;
 
 use Illuminate\Support\Str;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
- */
 class CourseFactory extends Factory
 {
     /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Course::class;
+
+    /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @return array
      */
-    public function definition(): array
+    public function definition()
     {
+        //Hola mundo
+        //hola-mundo
 
         $title = $this->faker->sentence();
 
@@ -35,8 +41,8 @@ class CourseFactory extends Factory
             'slug' => Str::slug($title),
             'user_id' => 1,
             'level_id' => Level::all()->random()->id,
-            'caregory_id' => Category::all()->random()->id,
-            'price_id' => Price::all()->random()->id
+            'category_id' => Category::all()->random()->id,
+            'price_id' => Price::all()->random()->id,
         ];
     }
 }
