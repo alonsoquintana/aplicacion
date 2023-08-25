@@ -92,11 +92,11 @@
     </section>
 
 
-    <section class="mt-24">
+    <section class="my-24">
         <h1 class="text-center text-3xl text-gray-600">ÚLTIMOS CURSOS</h1>
         <p class="text-center text-gray-500 text-sm mb-6">Hay mucho trabajo en cada curso hecho</p>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-4 gap-x-6 gap-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
 
             @foreach ($courses as $course)
                 <article class="bg-white shadow-lg rounded overflow-hidden">
@@ -110,26 +110,33 @@
 
                             <ul class="flex text-sm">
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 1 ? 'yellow' : 'gray'}}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 1 ? 'yellow' : 'gray' }}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 2 ? 'yellow' : 'gray'}}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 2 ? 'yellow' : 'gray' }}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 3 ? 'yellow' : 'gray'}}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 3 ? 'yellow' : 'gray' }}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 4 ? 'yellow' : 'gray'}}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 4 ? 'yellow' : 'gray' }}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating == 5 ? 'yellow' : 'gray'}}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating == 5 ? 'yellow' : 'gray' }}-400"></i>
                                 </li>
                             </ul>
-                            
-                            <p></p>
+
+                            <p class="text-sm text-gray-500 ml-auto">
+                                <i class="fas fa-users">
+                                    ({{$course->students_count}})
+                                </i>
+                            </p>
 
                         </div>
 
+                        <a href="{{route('course.show', $course)}}" class="block text-center w-full mt-4 bg-blue-500 bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Más información
+                        </a>
                     </div>
                 </article>
             @endforeach
