@@ -13,7 +13,7 @@ class CourseIndex extends Component
     public function render()
     {
 
-        $categories = Category
+        $categories = Category::all();
 
         $courses = Course::where('status', 3)->latest('id')->paginate(8);
 
