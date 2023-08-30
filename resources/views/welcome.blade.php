@@ -1,5 +1,7 @@
 <x-app-layout>
 
+    {{--Portada--}}
+
     <section class="bg-cover" style="background-image: url({{asset('img/home/people-2557396_1920.jpg')}})">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
             <div class="w-full md:w-3/ lg:w-1/2">
@@ -24,7 +26,7 @@
 
     <section class="mt-24">
         <h1 class="text-gray-600 text-center text-3xl mb-6">CONTENIDO</h1>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover" src="{{asset('img/home/night-8167272_640.jpg')}}" alt="">
@@ -107,22 +109,22 @@
                         <p class="text-gray-500 text-sm mb-2">Prof: {{$course->teacher->name}}</p>
 
                         <div class="flex">
-
+                        
                             <ul class="flex text-sm">
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 1 ? 'yellow' : 'gray' }}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 1 ? 'yellow' : 'gray'}}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 2 ? 'yellow' : 'gray' }}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 2 ? 'yellow' : 'gray'}}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 3 ? 'yellow' : 'gray' }}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 3 ? 'yellow' : 'gray'}}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 4 ? 'yellow' : 'gray' }}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 4 ? 'yellow' : 'gray'}}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating == 5 ? 'yellow' : 'gray' }}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating >= 5 ? 'yellow' : 'gray'}}-400"></i>
                                 </li>
                             </ul>
 
@@ -134,7 +136,7 @@
 
                         </div>
 
-                        <a href="{{route('course.show', $course)}}" class="block text-center w-full mt-4 bg-blue-500 bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <a href="{{route('courses.show', $course)}}" class="block text-center w-full mt-4 bg-blue-500 bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Más información
                         </a>
                     </div>

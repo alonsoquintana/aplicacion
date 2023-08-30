@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('url');
-            $table->string('iframe');
+            $table->string('iframe', 2000);
 
             $table->unsignedBigInteger('platform_id')->nullable();
             $table->unsignedBigInteger('section_id');
