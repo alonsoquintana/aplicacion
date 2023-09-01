@@ -124,7 +124,7 @@
                                     <i class="fas fa-star text-{{$course->rating >= 4 ? 'yellow' : 'gray'}}-400"></i>
                                 </li>
                                 <li class="mr-1">
-                                    <i class="fas fa-star text-{{$course->rating >= 5 ? 'yellow' : 'gray'}}-400"></i>
+                                    <i class="fas fa-star text-{{$course->rating == 5 ? 'yellow' : 'gray'}}-400"></i>
                                 </li>
                             </ul>
 

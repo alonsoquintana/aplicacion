@@ -15,20 +15,16 @@
                     <i class="fas fa-angle-down text-sm ml-2"></i>
                 </button>
                 <!-- Dropdown Body -->
-                <div class="absolute right-8 w-48 mt-2 py-2 bg-white border rounded shadow-x1" x-show="open" x-on:click.away="open = false">
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white">Setting
-                    <div class="py-2">
-                        <hr></hr>
-                    </div>
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-purple-500 hove:text-white">
-                        Logout
-                    </a>
+                <div class="absolute right-0 w-40 mt-2 py-2 bg-white border rounded shadow-x1" x-show="open" x-on:click.away="open = false">
+                    @foreach ($categories as $category)
+                        <a class="cursor-pointer transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-blue-500 hover:text-white" wire:click="$set('category_id', {{$category->id}})">{{$category->name}}</a>
+                    @endforeach
                 </div>
                 <!-- // Dropdown Body -->
             </div>
             <!-- // Dropdown -->
             
-            <!-- Dropdown niveles -->
+            <!-- Dropdown levels -->
             <div class="relative" x-data="{ open:false }">
                 <button class=" px-4 text-gray-700 block h-12 rounded-lg overflow-hidden focus:outline-none bg-white shadow" x-on:click="open = !open">
                     <i class="fas fa-server text-sm mr-2"></i>
@@ -36,23 +32,21 @@
                     <i class="fas fa-angle-down text-sm ml-2"></i>
                 </button>
                 <!-- Dropdown Body -->
-                <div class="absolute right-8 w-48 mt-2 py-2 bg-white border rounded shadow-x1" x-show="open" x-on:click.away="open = false">
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white">Setting
-                    <div class="py-2">
-                        <hr></hr>
-                    </div>
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-purple-500 hove:text-white">
-                        Logout
-                    </a>
+                <div class="absolute right-0 w-40 mt-2 py-2 bg-white border rounded shadow-x1" x-show="open" x-on:click.away="open = false">
+                    @foreach ($levels as $level)
+                        <a class="cursor-pointer transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-blue-500 hover:text-white">{{$level->name}}</a>
+                    @endforeach
                 </div>
                 <!-- // Dropdown Body -->
             </div>
             <!-- // Dropdown -->
-            
 
             </div>
         </div>
     </div>
+
+    <p>category_id: {{$category_id}}</p>
+    <p>level_id: {{$level_id}}</p>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
 
