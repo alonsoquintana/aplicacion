@@ -11,8 +11,8 @@ use App\Models\Level;
 class CourseIndex extends Component
 {
 
-    public $category_id = 1;
-    public $level_id = 2;
+    public $category_id;
+    public $level_id;
 
     public function render()
     {
@@ -20,8 +20,16 @@ class CourseIndex extends Component
         $categories = Category::all();
         $levels = Level::all();
 
-        $courses = Course::where('status', 3)->latest('id')->paginate(8);
+        $courses = Course::where('status', 3)
+                        ->category($this->category_id)
+                        ->level($this->level_id)
+                        ->latest('id')
+                        ->paginate(8);
 
         return view('livewire.course-index', compact('courses', 'categories', 'levels'));
+    }
+
+    public function resetFilters(){
+        $this->reset(['category_id', 'level_id']);
     }
 }
