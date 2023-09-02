@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
+import { Container } from 'postcss';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -17,6 +18,11 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
+    },
+
+    corePlugins: {
+        // ...
+        container: false,
     },
 
     plugins: [forms, typography],
