@@ -35,7 +35,7 @@
 
         </div>
 
-        <a href="{{route('courses.show', $course)}}" class="block text-center w-full mt-4 btn btn-primary">
+        <a href="{{route('courses.show', $course)}}" class="block text-center w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Más información
         </a>
     </div>
