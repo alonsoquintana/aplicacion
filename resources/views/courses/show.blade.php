@@ -16,14 +16,14 @@
         </div>
     </section>
 
-    <div class="container grid grid-cols-1 gap-6">
+    <div class="container grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        <div class="order-2">
+        <div class="order-2 lg:col-span-2 lg:order-1">
             <section class="bg-white shadow-lg rounded overflow-hidden mb-12">
                 <div class="px-6 py-4">
                     <h1 class="text-gray-900 font-bold text-2xl mb-2">Lo que aprenderás</h1>
 
-                    <ul class="grid grid-cols-2 gap-x-6 gap-y-2">
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
                         @foreach ($course->goals as $goal)
                             <li class="text-gray-700 text-base"><i class="fas fa-check text-gray-600 mr-2"></i>{{$goal->name}}</li>
                         @endforeach
@@ -84,7 +84,7 @@
 
         </div>
 
-        <div class="order-1">
+        <div class="order-1 lg:order-2">
             <section class="bg-white shadow-lg rounded overflow-hidden mb-4">
                 <div class="px-6 py-4">
 
@@ -102,7 +102,7 @@
             </section>
 
 
-            <aside class="hidden">
+            <aside class="hidden lg:block">
                 @foreach ($similares as $similar)
                     <article class="flex mb-6">
                         <img class="h-32 w-40 object-cover" src="{{Storage:: url($similar->image->url)}}" alt="">
@@ -113,7 +113,7 @@
 
                             <div class="flex items-center mb-2">
                                 <img class="h-8 w-8 object-cover rounded-full shadow-lg" src="{{$similar->teacher->profile_photo_url}}" alt="">
-                                <p class="text-gray-700 text-sm ml-2    ">{{$similar->teacher->name}}</p>
+                                <p class="text-gray-700 text-sm ml-2">{{$similar->teacher->name}}</p>
                             </div>
 
 
