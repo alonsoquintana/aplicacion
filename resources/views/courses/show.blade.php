@@ -96,7 +96,10 @@
                         </div>
                     </div>
 
-                    <a href="" class="font-bold py-2 px-4 rounded bg-red-500 text-white block text-center mt-4">Llevar este curso</a>
+                    <form action="{{route('courses.enrolled', $course)}}" method="post">
+                        @csrf
+                        <button class="font-bold py-2 px-4 rounded bg-red-500 text-white block text-center mt-4" type="submit">Llevar este curso</button>
+                    </form>
 
                 </div>
             </section>
