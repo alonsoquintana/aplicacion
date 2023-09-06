@@ -31,4 +31,9 @@ class CourseController extends Controller
 
         return redirect()->route('course.status', $course);
     }
+
+    public function status(Course $course) {
+        return view('course.status', compact('course'));
+    }
+
 }

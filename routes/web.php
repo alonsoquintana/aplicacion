@@ -28,6 +28,4 @@ Route::get('cursos/{course}', [CourseController::class, 'show'])->name('courses.
 
 Route::post('courses/{course}/enrolled', [CourseController::class, 'enrolled'])->middleware('auth')->name('courses.enrolled');
 
-Route::get('course-status/{course}', function ($course) {
-    return "Aqui vas a poder llevar el control de tu avance";
-})->name('course.status');
+Route::get('course-status/{course}', [CourseController::class,'status'])->name('course.status');
