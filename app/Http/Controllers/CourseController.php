@@ -33,7 +33,7 @@ class CourseController extends Controller
     }
 
     public function status(Course $course) {
-        return view('course.status', compact('course'));
+        return view('courses.status', compact('course'));
     }
 
 }

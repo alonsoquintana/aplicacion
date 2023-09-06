@@ -1,6 +1,6 @@
 <x-app-layout>
     <section class="bg-gray-700 py-12 mb-12">
-        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-6">
             <figure>
                 <img class="h-60 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">
             </figure>
@@ -16,7 +16,7 @@
         </div>
     </section>
 
-    <div class="container grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         <div class="order-2 lg:col-span-2 lg:order-1">
             <section class="bg-white shadow-lg rounded overflow-hidden mb-12">
