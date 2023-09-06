@@ -3,6 +3,7 @@
         <div class="col-span-2 text-gray-900">
             {!!$current->iframe!!}
             {{$current->name}}
+            <p>Indice: {{$index}}</p>
         </div>
 
         <div class="bg-white shadow-lg rounded overflow-hidden">
