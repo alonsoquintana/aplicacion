@@ -3,7 +3,13 @@
         <div class="col-span-2 text-gray-900">
             {!!$current->iframe!!}
             {{$current->name}}
-            <p>Indice: {{$index}}</p>
+            <p>Indice: {{$this->index}}</p>
+            <p>Previous: @if ($this->previous)
+                {{$this->previous->id}}
+            @endif</p>
+            <p>Next: @if ($this->next)
+                {{$this->next->id}}
+            @endif</p>
         </div>
 
         <div class="bg-white shadow-lg rounded overflow-hidden">
@@ -28,7 +34,7 @@
                             <ul>
                                 @foreach ($section->lessons as $lesson)
                                     <li>
-                                        <a href="">{{$lesson->id}} @if ($lesson->completed)
+                                        <a class="cursor-pointer" wire:click="changeLesson({{$lesson}})" >{{$lesson->id}} @if ($lesson->completed)
                                             (Completado)
                                         @endif</a>
                                     </li>
