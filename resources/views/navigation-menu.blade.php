@@ -207,7 +207,7 @@
                         Perfil
                     </x-responsive-nav-link>
 
-                    <x-responsive-nav-link href="{{ route('instructor.courses') }}" :active="request()->routeIs('profile.show')">
+                    <x-responsive-nav-link href="{{ route('instructor.courses.index') }}" :active="request()->routeIs('instructor.courses.index')">
                         Instructor
                     </x-responsive-nav-link>
 
