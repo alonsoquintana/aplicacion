@@ -80,6 +80,10 @@ class RoleController extends Controller
             'permissions' => 'required'
         ]);
 
+        $role->update([
+            'name' => $request->name
+        ]);
+
         $role->permissions()->sync($request->permissions);
 
         return redirect()->route('admin.roles.edit', $role);
