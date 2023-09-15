@@ -10,6 +10,13 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Leer usuarios')->only('index');
+        $this->middleware('can:Editar usuarios')->only('edit', 'update');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -36,6 +43,6 @@ class UserController extends Controller
     {
         $user->roles()->sync($request->roles);
 
-        return redirect()->route('admin.users.edit');
+        return redirect()->route('admin.users.edit', $user);
     }
 }
