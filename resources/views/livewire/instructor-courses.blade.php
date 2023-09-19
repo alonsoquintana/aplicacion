@@ -1,9 +1,11 @@
-<div class="max-w-7xl mx-auto px-4 py-8">
+<div class="max-w-7xl mx-auto px-4 py-8 text-black">
   <x-table-responsive>
 
     <div class="px-6 py-4">
-      <input class="form-input w-full shadow-sm" placeholder="Ingrese el nombre de un curso">
+      <input wire:keydown='limpiar_page' wire:model="search" class="form-input w-full shadow-sm" placeholder="Ingrese el nombre de un curso">
     </div>
+
+  @if ($courses->count())
 
     <table class="min-w-full divide-y divide-gray-200">
       <thead class="bg-gray-50">
@@ -77,19 +79,19 @@
             
             <td class="px-6 py-4 whitespace-nowrap">
 
-              @switch($course->Status)
+              @switch($course->status)
                   @case(1)
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg red-100 text-red-800">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
                       Borrador
                     </span>
                       @break
                   @case(2)
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg yellow-100 text-yellow-800">
-                      Revisión
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                      Revision
                     </span>
                       @break
                   @case(3)
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg green-100 text-green-800">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                       Publicado
                     </span>
                       @break
@@ -97,8 +99,8 @@
                       
               @endswitch
 
-
             </td>
+
             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
               <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
             </td>
@@ -111,6 +113,12 @@
     <div class="px-6 py-4">
       {{$courses->links()}}
     </div>
+
+  @else
+    <div class="px-6 py-4">
+      No hay ningún registro coincidente ༼ つ ◕_◕ ༽つ
+    </div>
+  @endif
   </x-table-responsive>
 
 
