@@ -1,3 +1,3 @@
 <x-app-layout>
-    @livewire('course-status')
+    @livewire('courses-status')
 </x-app-layout>
