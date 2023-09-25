@@ -1,8 +1,10 @@
 <div class="max-w-7xl mx-auto px-4 py-8 text-black">
   <x-table-responsive>
 
-    <div class="px-6 py-4">
-      <input wire:keydown='limpiar_page' wire:model="search" class="form-input w-full shadow-sm" placeholder="Ingrese el nombre de un curso">
+    <div class="px-6 py-4 flex">
+      <input wire:keydown='limpiar_page' wire:model="search" class="form-input flex-1 shadow-sm" placeholder="Ingrese el nombre de un curso">
+
+      <a class="font-bold py-2 px-4 rounded bg-red-500 text-white ml-2" href="{{route('instructor.courses.create')}}">Crear nuevo curso</a>
     </div>
 
   @if ($courses->count())
@@ -10,16 +12,16 @@
     <table class="min-w-full divide-y divide-gray-200">
       <thead class="bg-gray-50">
         <tr>
-          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
             Nombre
           </th>
-          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
             Matriculados
           </th>
-          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
             Calificacion
           </th>
-          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
             Status
           </th>
           <th scope="col" class="relative px-6 py-3">
