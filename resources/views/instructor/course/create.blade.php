@@ -7,8 +7,10 @@
 
                 <hr class="mt-2 mb-6">
 
-                {!! Form::open(['route' => 'instructor.courses.']) !!}
+                {!! Form::open(['route' => 'instructor.courses.store']) !!}
 
+                    @include('instructor.course.partials.form')
+                
                 {!! Form::close() !!}
             </div>
         </div>
